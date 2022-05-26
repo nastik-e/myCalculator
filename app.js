@@ -22,8 +22,6 @@ calcButtcons.addEventListener ("click", function(e)  {
         mathLine.textContent = "";
         result.textContent = "";
     
-    // } else if (button.classList.contains("delete")) {
-    //     buttonValue = buttonValue.slice(0,1);
     
     } else if (button.classList.contains("number")) {
         if (operator.length > 0) {
@@ -81,5 +79,16 @@ calcButtcons.addEventListener ("click", function(e)  {
     }
 
     mathLine.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+// Хуита какая-то с этой кнопкой
+        if (button.classList.contains("delete")) {
+                                        console.log('до: ' + mathLine.textContent)
+                                        console.log ('length ' + mathLine.textContent.length);
+            //let lastNumber = mathLine.textContent [mathLine.textContent.length - 3];
+            //                            console.log ('last ' + lastNumber);
+            let newLine = mathLine.textContent.slice (0, mathLine.textContent.length - 3);
+                                        console.log ('обрезанная ' + newLine);
+            mathLine.textContent = newLine;
+            console.log('new mathLine= ' + mathLine.textContent);
 
+        }
 })
