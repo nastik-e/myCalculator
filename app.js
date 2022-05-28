@@ -6,14 +6,11 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 
-
-
-
 calcButtcons.addEventListener ("click", function(e)  {
     const button = e.target;
     const buttonValue = button.textContent;
 
-    if (buttonValue === "C") {
+        if (buttonValue === "C" || buttonValue === "AC") {
             resetVar() 
         result.textContent = "";
     
@@ -95,6 +92,15 @@ calcButtcons.addEventListener ("click", function(e)  {
     function showMathLine() {
         mathLine.textContent = `${firstNumber} ${operator} ${secondNumber}`;
     }
-    
+   
+    if (mathLine.textContent.length > 3) {
+        c1.classList.add("hidden");
+        c2.classList.remove ("hidden");
+        c3.classList.remove ("hidden");
+    } else {
+        c1.classList.toggle("hidden")
+        c2.classList.toggle("hidden")
+        c3.classList.toggle("hidden")
+    }
 })
 

@@ -68,3 +68,7 @@ body {
     word-wrap: break-word;
 
 }
+
+.hidden {
+ display:none;
+}
